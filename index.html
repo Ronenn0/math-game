@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+      <div id="startDiv">
+        <div id="intro">
+        <span>*This is a speed Math test.</span>
+        <span>*Try your best to answer correctly</span>
+        <span>*Have fun!</span>
+        </div>
+        <button type="submit" id="start">
+          Start
+        </button>
+      </div>
+      <div id="game">
+         <span id="time">0.00s</span>
+        
+        <!-- <div id="score">
+        <span id="scoreWord">Current Score: </span>
+            <span id="currentScore">0</span>
+        </div> -->
+        <div id="streak">
+            <span id="currentStreakWord">Current Streak: </span>
+                <span id="currentStreak">0</span>
+            </div>
+        <div id="question">
+            <span id="scoreQuestionWord">Current Question: </span>
+            <span id="currentQuestion">0</span>
+        </div>
+        
+        <div id="timeDiv">
+            <!-- <span id="seconds"></span> -->
+            <div id="main"></div>
+        </div>
+        <div id="mathDiv">
+            <span id="syntax">20+15</span>
+            <div id="answers">
+                <span id="answer1">34</span>
+                <span id="answer2">36</span>
+                <span id="answer3">35</span>
+                <span id="answer4">26</span>
+            </div>
+        </div>
+</div>
+        
+    </div>
+    <div id="popOutDiv">
+      <div id="streakDiv">
+        <span id="maxStreakWord">
+          Max streak:
+        </span>
+        <span id="maxStreak">5</span>
+      </div>
+      <span id="closedTime">0.00s</span>
+     
+            <div id="scoreDiv">
+                <span id="scoreSentence">Score:</span>
+                <span id="score">92/100</span>
+            </div>
+            <button id="tryAgainButton">Try again</button>
+        </div>
+        
+    <script src="global.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>

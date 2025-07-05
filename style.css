@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+}
+:root {
+  --avgPixel: calc(1vw + 1vh);
+  --red: firebrick;
+  --orange: rgb(255,143,6);
+  --green: rgb(46,139,87);
+  --sizeStartDiv: calc(min(70vw, 70vh));
+}
+#container, #game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #222222;
+}
+#game {
+  opacity: 0;
+  pointer-events: none;
+}
+#start {
+  position: relative;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  font-size: calc(var(--avgPixel) * 2.5);
+  padding: 0 calc(var(--avgPixel));
+  letter-spacing: calc(var(--avgPixel) * 0.12);
+}
+#startDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: calc(var(--sizeStartDiv) * 1.2);
+  height: var(--sizeStartDiv);
+  color: white;
+  letter-spacing: 0.15vw;
+  z-index: 1001;
+ background: none;
+}
+#intro span {
+  display: block;
+   white-space: pre;
+   font-size: calc(var(--avgPixel) * 1.5);
+   margin-top: 2vh;
+}
+
+#mathDiv {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: pre;
+}
+
+#syntax {
+  color: white;
+  letter-spacing: calc(0.5 * var(--avgPixel));
+  font-size: calc(4 * var(--avgPixel));
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  white-space: none;
+  position: relative;
+}
+#answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: calc(1.3 * var(--avgPixel));
+  background: none;
+  margin-top: calc(1.5 * var(--avgPixel));;
+}
+#answers span {
+  white-space: none;
+  font-size: calc(2.3 * var(--avgPixel));
+  color: rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: calc(1 * var(--avgPixel));
+  padding: 0.1vh 1vw;
+  cursor: pointer;
+}
+#answers span:hover {
+  background-color: rgba(0, 119, 255, 0.7);
+}
+
+#streak, #question {
+  position: absolute;
+  top: 1%;
+  left: 20%;
+  transform: translate(-50%);
+  font-size: calc(2 * var(--avgPixel));
+  color: white;
+}
+#question {
+  left: 35%;
+  top: 6%;
+}
+#answers span::selection {
+  background: none;
+}
+#timeDiv {
+  height: 0.9vh;
+  border-radius: 3%;
+  background-color: rgba(0,0,0,0.335);
+  position: absolute;
+  left: 30%;
+  top: 15%;
+}
+#main {
+  background-color: rgba(0, 119, 255, 0.7);
+  height: 0.9vh;
+  box-shadow: 3px 3px 5px all;
+}
+#popOutDiv {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background-color: rgb(255, 255, 255);
+
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: calc(0.6 * var(--avgPixel)) calc(0.6 * var(--avgPixel)) 6px rgba(255, 255, 255, 0.2);
+}
+#scoreSentence {
+  font-size: calc(2 * var(--avgPixel));
+}
+#score {
+  font-size: calc(2 * var(--avgPixel));
+  position: relative;
+  left: 1%;
+}
+#scoreDiv {
+  margin: 0;
+  position: relative;
+  left: 50%;
+  top: 20%;
+  transform: translate(-35%, -40%);
+  font-family: monospace;
+}
+#tryAgainButton {
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: calc(15 * var(--avgPixel));
+  font-size: calc(2 * var(--avgPixel));
+  letter-spacing: calc(0.1 * var(--avgPixel));
+}
+#tryAgainButton:hover {}
+
+@keyframes popIn {
+  from {
+    top: 40%;
+    opacity: 0.4;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+@keyframes popOut {
+  0% {
+    pointer-events: none;
+  }
+  from {
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    top: 40%;
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes popInGameDiv {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes makeDark {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes makeRegularOpacity {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#streakDiv {
+  font-size: calc(1.5 * var(--avgPixel));
+  position: relative;
+  left: 5%;
+  top: 2%;
+  font-family: monospace;
+}
+#time {
+  color: white;
+  letter-spacing: calc(0.1 * var(--avgPixel));
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  font-size: calc(1.5 * var(--avgPixel));
+  z-index: 1011;
+}
+#closedTime {
+  color: black;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(3 * var(--avgPixel));
+  letter-spacing: calc(0.3 * var(--avgPixel));
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  font-family: Georgia, serif;
+}
